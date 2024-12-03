@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./producTable.module.css";
 
-const ProductTable = ({ products, onRemove }) => {
+const ProductTable = ({ products = [], onRemove }) => {
   return (
     <div className={`${styles.wrapper} container`}>
       <div>

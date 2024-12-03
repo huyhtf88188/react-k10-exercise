@@ -14,6 +14,7 @@ import ProductTable from "./pages/admin/ProductTable";
 import RegisterForm from "./pages/user/RegisterForm";
 import LoginForm from "./pages/user/LoginForm";
 import User from "./pages/user/User";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   const [products, setProducts] = useState([]);

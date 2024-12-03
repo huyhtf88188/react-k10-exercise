@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
-import { getAll } from "../../axios";
+import { createNew, getAll } from "../../axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { userShemas } from "../../schemas/userShemas";
 import styles from "./registerForm.module.css";
@@ -21,14 +21,19 @@ const LoginForm = () => {
         ({ username, email }) =>
           username === dataUser.username && email === dataUser.email
       );
-      console.log(res);
       if (
         dataUser.email === "hhhoanghuy@yahoo.com" ||
         dataUser.username === "hhhoanghuy"
       ) {
         navigate("/admin/products");
       } else if (idlogin) {
+        const resLogin = await createNew("/login", dataUser);
+        const accessToken = resLogin.accessToken;
+        console.log(accessToken);
+
         navigate("/");
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("email", dataUser.email);
       } else {
         alert("Tài khoản hoặc mật khẩu không chính xác");
       }
