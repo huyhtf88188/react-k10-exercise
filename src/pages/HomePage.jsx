@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAll } from "../axios";
-// import Button from 'react-bootstrap/Button';
-import Card from "react-bootstrap/Card";
+import styles from "./homePage.module.css";
 
 const HomePage = () => {
   const [productsHome, setProdcuctsHome] = useState([]);
@@ -15,16 +14,25 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="container">
-        <h2>Danh Sách Sản Phẩm</h2>
-        {productsHome.map((item) => (
-          <Card key={item.id} style={{ width: "18rem" }}>
-            <Card.Body>
-              <Card.Title>${item.title}</Card.Title>
-              <Card.Text>${item.description}</Card.Text>
-            </Card.Body>
-          </Card>
-        ))}
+      <div className={styles.container}>
+        <h2 className={styles.heading}>Danh Sách Sản Phẩm</h2>
+        <div className={styles.grid}>
+          {productsHome.map((item) => (
+            <div key={item.id} className={styles.card}>
+              <img
+                src={item.thumbnail}
+                className={styles.image}
+                alt={item.title}
+              />
+              <h3 className={styles.title}>{item.title}</h3>
+              <p className={styles.price}>
+                <strong>Giá: </strong>${item.price}
+              </p>
+              <p className={styles.description}>{item.description}</p>
+              <button className={styles.button}>Xem Chi Tiết</button>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
