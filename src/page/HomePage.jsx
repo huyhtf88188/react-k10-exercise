@@ -5,20 +5,18 @@ import { useEffect, useState } from "react";
 const HomePage = () => {
   const userId = localStorage.getItem("userId");
   const [usertodo, setUsertodo] = useState([]);
-  const [reload, setReload] = useState(false);
 
   useEffect(() => {
     (async () => {
       const userTodoList = await getAll(`/todolist?usersId=${+userId}`);
       setUsertodo(userTodoList);
     })();
-  }, [reload]);
+  }, []);
 
   const handleRemoveTodo = async (id) => {
     if (confirm("Are you sure?")) {
       const res = await removeById("/todolist", id);
       if (res.status === 200) {
-        console.log(res);
         const newTodoList = usertodo.filter((item) => item.id !== id);
         setUsertodo(newTodoList);
       }

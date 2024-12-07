@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
 import { createNew, getById, updateById } from "../services/crudServices";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { todolistSchema } from "../schema/todoListSchema";
 
 const HomePageForm = () => {
-  //   const [todoValue, setTodovalue] = useState([]);
+  let navigate = useNavigate();
   const { id } = useParams();
   const {
     register,
@@ -27,8 +27,15 @@ const HomePageForm = () => {
   }, [id]);
 
   const handleTodoList = async (todolist) => {
+    console.log("Submitted data:", todolist);
     try {
       if (id) {
+        const userConfirmed = confirm(
+          "Cập nhật thành công, bạn có muốn chuyển đến danh sách việc làm?"
+        );
+        if (userConfirmed) {
+          navigate("/homePage");
+        }
         await updateById("/todolist", id, todolist);
       } else {
         const userIdCreat = localStorage.getItem("userId");
@@ -36,6 +43,12 @@ const HomePageForm = () => {
         todolist.usersId = +userIdCreat;
         if (userIdCreat) {
           await createNew("/todolist", todolist);
+          const userConfirmed = confirm(
+            "Thêm mới thành công, bạn có muốn chuyển đến danh sách việc làm?"
+          );
+          if (userConfirmed) {
+            navigate("/homePage");
+          }
         }
       }
     } catch (err) {
@@ -77,11 +90,17 @@ const HomePageForm = () => {
 
           <div>
             Priority
-            <select name="priority" id="priority">
+            <select
+              name="priority"
+              id="priority"
+              defaultValue={"easy"}
+              {...register("priority", { required: true })}
+            >
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Hard</option>
             </select>
+            {errors.priority && <p>{errors.priority.message}</p>}
           </div>
 
           <div>
