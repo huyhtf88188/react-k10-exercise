@@ -27,7 +27,6 @@ const HomePageForm = () => {
   }, [id]);
 
   const handleTodoList = async (todolist) => {
-    console.log("Submitted data:", todolist);
     try {
       if (id) {
         const userConfirmed = confirm(
