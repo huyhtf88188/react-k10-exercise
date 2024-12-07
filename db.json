@@ -2,19 +2,11 @@
   "todoList": [
     {
       "id": 2,
-      "title": "hhhoanghuy1",
+      "title": "hhhoanghuy12",
       "description": "hhhoanghuy1",
       "priority": "medium",
       "status": "pending",
       "usersId": 5
-    },
-    {
-      "title": "dfdfdf11",
-      "description": "dfdfdfdf11",
-      "priority": "easy",
-      "status": "done",
-      "usersId": 5,
-      "id": 9
     }
   ],
   "users": [
