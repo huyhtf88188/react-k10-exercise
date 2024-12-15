@@ -1,0 +1,61 @@
+{
+  "users": [
+    {
+      "email": "hhhoangthanhhuy1992@gmail.com",
+      "password": "$2a$10$piJSdwGMNIv5JlBHQMnMb.ASOz1qU0EswJ4rwdrt6nDXsSZinIDBy",
+      "confirm": "123123123",
+      "id": 1
+    },
+    {
+      "email": "hhhoanghuy@yahoo.com",
+      "password": "$2a$10$jm3xophn2rYwL6YlrHDKBONnPteatf5X.aaMLlD2R1ESh8iLVeUgy",
+      "confirm": "123123123",
+      "id": 2,
+      "role": "admin"
+    },
+    {
+      "email": "huyhtf8188@fullstack.edu.vn",
+      "password": "$2a$10$.UY.NrLVoxXIVBYzz817P.YBMhphjGkpiyngGq6IYNHXXKmyexyhq",
+      "confirm": "123123123",
+      "id": 3
+    }
+  ],
+  "todos": [],
+  "products": [
+    {
+      "id": 1,
+      "title": "san pham 1 update",
+      "price": 200,
+      "description": "qqqqq"
+    },
+    {
+      "id": 2,
+      "title": "san pham 2 update",
+      "price": 200,
+      "description": "qqqqq"
+    },
+    {
+      "id": 3,
+      "title": "san pham 3",
+      "price": 400
+    },
+    {
+      "title": "them san pham 5",
+      "price": 200,
+      "description": "mo ta",
+      "id": 4
+    },
+    {
+      "title": "them san pham moi lan 2",
+      "price": 20022,
+      "description": "mo ta",
+      "id": 5
+    },
+    {
+      "title": "thêm sản phẩm 10",
+      "price": 10000,
+      "description": "ahvhbh",
+      "id": 6
+    }
+  ]
+}

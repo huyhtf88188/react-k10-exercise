@@ -1,0 +1,132 @@
+/* Tổng thể Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Logo Section */
+.logoSection {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.logoLink {
+  text-decoration: none;
+  color: #fff;
+}
+
+.logoDescription {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+.logoH {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.firstLetter {
+  color: #ff6347;
+  transform: rotate(-5deg);
+}
+
+.lastLetter {
+  color: #1e90ff;
+  transform: rotate(5deg);
+}
+
+/* Links Section */
+.linksSection {
+  flex: 1 1 200px;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #ff6347;
+}
+
+/* Social Section */
+.socialSection {
+  flex: 1 1 200px;
+}
+
+.socialLinks {
+  list-style: none;
+  padding: 0;
+}
+
+.socialLink {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.socialLink i {
+  color: #ff6347;
+}
+
+.socialLink:hover {
+  color: #ff6347;
+}
+
+/* Contact Section */
+.contactSection {
+  flex: 1 1 200px;
+}
+
+.contactList {
+  list-style: none;
+  padding: 0;
+}
+
+.contactList li {
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.footerBottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #444;
+  font-size: 0.85rem;
+  color: #aaa;
+}
