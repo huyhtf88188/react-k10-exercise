@@ -2,11 +2,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { productSchema } from "../schema/productSchema";
-import { addProduct, updateProduct } from "../action/productAction";
-import instance from "../axios/axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
+
+import {
+  createProducts,
+  fetchProductsById,
+  updateProducts,
+} from "../features/products/productsAction";
 import { toast } from "react-toastify";
 
 const ProductsForm = () => {
@@ -27,25 +31,24 @@ const ProductsForm = () => {
     (async () => {
       try {
         if (id) {
-          const { data } = await instance.get(`products/${id}`);
-          reset(data);
+          const res = await dispatch(fetchProductsById(id)).unwrap();
+          reset(res);
         }
       } catch (err) {
         console.log(err);
       }
     })();
-  }, []);
+  }, [id, reset]);
 
-  const handleSubmitForm = async (data) => {
+  const handleSubmitForm = async (payload) => {
     try {
       if (id) {
-        const newProduct = await instance.patch(`/products/${id}`, data);
-        console.log(newProduct);
-        dispatch(updateProduct(data));
+        // const newProduct = await instance.patch(`/products/${id}`, data);
+        // console.log(newProduct);
+        dispatch(updateProducts({ id, payload }));
         nav("/admin/products");
       } else {
-        await instance.post("/products", data);
-        dispatch(addProduct(data));
+        dispatch(createProducts(payload));
         nav("/admin/products");
       }
     } catch (err) {

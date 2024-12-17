@@ -23,39 +23,10 @@
   "todos": [],
   "products": [
     {
-      "id": 1,
-      "title": "san pham 1 update",
-      "price": 200,
-      "description": "qqqqq"
-    },
-    {
-      "id": 2,
-      "title": "san pham 2 update",
-      "price": 200,
-      "description": "qqqqq"
-    },
-    {
-      "id": 3,
-      "title": "san pham 3",
-      "price": 400
-    },
-    {
-      "title": "them san pham 5",
-      "price": 200,
-      "description": "mo ta",
-      "id": 4
-    },
-    {
-      "title": "them san pham moi lan 2",
-      "price": 20022,
-      "description": "mo ta",
-      "id": 5
-    },
-    {
-      "title": "thêm sản phẩm 10",
-      "price": 10000,
-      "description": "ahvhbh",
-      "id": 6
+      "title": "ádadasd",
+      "price": 123123123,
+      "description": "sádasd2222",
+      "id": 1
     }
   ]
 }

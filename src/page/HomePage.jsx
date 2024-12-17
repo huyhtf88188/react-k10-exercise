@@ -1,27 +1,32 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setProduct } from "../action/productAction";
-import instance from "../services";
 import styles from "./homePage.module.css";
+import { fetchProducts } from "../features/products/productsAction";
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.products);
+  const { products, loading, error } = useSelector((state) => state.products);
 
   useEffect(() => {
     (async () => {
-      const { data } = await instance.get("/products");
-      dispatch(setProduct(data));
+      dispatch(fetchProducts());
     })();
-  }, []);
+  }, [dispatch]);
+
+  if (loading) {
+    return <p>...loading</p>;
+  }
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   return (
     <>
       <div className={styles.container}>
         <h1 style={{ textAlign: "center" }}>Danh Sách Sản Phẩm</h1>
         <div className={styles.row}>
-          {state.products &&
-            state.products.map((item, index) => (
+          {products &&
+            products.map((item, index) => (
               <div className={styles.col} key={index}>
                 <img src="https://picsum.photos/200/300" alt="" />
                 <p>

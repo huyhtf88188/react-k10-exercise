@@ -2,9 +2,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { loginSchema } from "../schema/authSchema";
-import instance from "../services";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import instance from "../axios/axios";
 
 const Login = () => {
   let nav = useNavigate();

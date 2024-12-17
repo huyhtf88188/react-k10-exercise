@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import instance from "../axios/axios";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser, setUser } from "../action/authAction";
+import instance from "../axios/axios";
 
 const AdminPage = () => {
   const state = useSelector((state) => state.users);

@@ -3,10 +3,10 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { registerSchema } from "../schema/authSchema";
 import { useDispatch } from "react-redux";
-import instance from "../services";
 import { registerUser } from "../action/authAction";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import instance from "../axios/axios";
 
 const Register = () => {
   const dispatch = useDispatch();
