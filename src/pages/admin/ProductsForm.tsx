@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import instance from "../../services/index.js";
 import { useAppDispatch } from "../../hooks/index.js";
 import { fetchProductById } from "../../features/products/productActions.js";
@@ -64,8 +64,7 @@ const ProductsForm = () => {
 
   return (
     <div className="container">
-      <h1>{id ? "Update" : "Add"}</h1>
-      <Link to="products/add">Add Product</Link>
+      <h1>{id ? "Update" : "Add"} Product</h1>
       <form
         action=""
         onSubmit={handleSubmit((data) => {
@@ -115,7 +114,9 @@ const ProductsForm = () => {
           <p className="text-danger">{errors.description.message}</p>
         )}
         <div className="mb-3">
-          <button className="btn btn-danger">{id ? "Update" : "Add"}</button>
+          <button className="btn btn-danger">
+            {id ? "Update" : "Add"} Product
+          </button>
         </div>
       </form>
     </div>
