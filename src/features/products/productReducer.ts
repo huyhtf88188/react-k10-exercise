@@ -91,7 +91,7 @@ const productSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(removeProduct.pending, (state) => {
-        state.loading = true;
+        state.loading = false;
       })
       .addCase(
         removeProduct.fulfilled,

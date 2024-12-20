@@ -18,7 +18,9 @@ const ProductsPage = () => {
   }, [dispatch]);
 
   const handleRemove = async (id: number | string) => {
-    dispatch(removeProduct(+id));
+    if (confirm("are you sure")) {
+      dispatch(removeProduct(+id));
+    }
   };
 
   if (loading) {
